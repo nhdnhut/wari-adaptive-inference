@@ -83,7 +83,7 @@ When deploying on a machine with $\ge 16\text{ GB}$ RAM:
 
 3. **Pre-Registered Go / No-Go Criteria:**
    - **GO (Keep Mode A - Full WARI-L):**
-     There exists a rank $r$ with useful core quality ($\text{KL} \le 0.5$, $\text{Argmax} \ge 80\%$), core bytes $< 50\%$ of pageable dense bytes, and session Jaccard overlap of FULL-demand $\ge 0.50$.
+     There exists a rank $r$ with useful core quality ($\text{KL} \le 0.5$, $\text{Argmax} \ge 80\%$), core bytes < 50% of pageable dense bytes, and session Jaccard overlap of FULL-demand $\ge 0.50$.
    - **NO-GO (Switch to Mode B):**
      Drop residual-core. Retain `skip+pin` and systems measurement apparatus. Reframe title and paper to empirical systems research.
 
