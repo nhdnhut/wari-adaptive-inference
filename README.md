@@ -1,5 +1,12 @@
 # WARI-L: Working-set Adaptive Residual Inference (Layer Granule)
 
+> Hardware-aware inference scheduling policy optimizing working-set memory locality during neural network inference on CPU.
+
+[![Python](https://img.shields.io/badge/Python-3.10+-brightgreen?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Tests](https://img.shields.io/badge/Tests-7%20Passed-brightgreen?style=flat-square)](tests/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+
 **Author:** Nguyen Huynh Dang Nhut  
 **Affiliation:** Faculty of Computer Science — Program in Artificial Intelligence, University of Information Technology, VNU-HCM  
 
