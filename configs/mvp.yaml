@@ -1,0 +1,29 @@
+model:
+  vocab_size: 1024
+  block_size: 256
+  n_layer: 8
+  n_head: 8
+  n_embd: 256
+  ffn_dim: 1024
+  dropout: 0.0
+
+wari:
+  rank: 32
+  tau_skip: 0.05
+  tau_core: 0.25
+  beta: 0.8
+  pin_budget_mb: 2.0  # RAM budget for pinned dense layers
+  dtype: "float32"
+
+system:
+  ssd_bandwidth_mbps: 2500.0  # 2.5 GB/s NVMe sequential read
+  ssd_latency_ms: 0.02         # 20 us first-byte latency
+  dram_bandwidth_gbps: 25.0    # 25 GB/s DDR4/DDR5 CPU memory bandwidth
+  num_threads: 4
+
+experiment:
+  seed: 42
+  batch_size: 1
+  seq_len: 128
+  warmup_tokens: 16
+  eval_tokens: 128

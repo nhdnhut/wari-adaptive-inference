@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wari-adaptive-inference"
+version = "0.1.0"
+description = "WARI-L: Working-set Adaptive Residual Inference, Layer Granule"
+authors = [{name = "Nguyen Huynh Dang Nhut", email = "penciltalk0910@gmail.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "psutil>=5.9.0",
+    "pyyaml>=6.0",
+    "matplotlib>=3.7.0",
+    "pandas>=2.0.0",
+    "tqdm>=4.65.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

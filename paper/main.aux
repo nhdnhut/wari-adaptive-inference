@@ -1,0 +1,91 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{wan2024efficient}
+\citation{xu2024ondevice}
+\citation{williams2009roofline}
+\citation{sheng2023flexgen}
+\citation{song2024powerinfer}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{sheng2023flexgen}
+\citation{alizadeh2024llminflash}
+\citation{song2024powerinfer}
+\citation{xue2024powerinfer2}
+\citation{kumar2025helios}
+\citation{zhang2025challenging}
+\citation{wan2024efficient}
+\citation{xu2024ondevice}
+\citation{yuan2024unveiled}
+\citation{chen2026ondevice}
+\citation{wang2025svdllm}
+\citation{yuan2023asvd}
+\citation{elhoushi2024layerskip}
+\citation{raposo2024mod}
+\citation{xie2026flexee}
+\citation{leviathan2023speculative}
+\citation{cai2024medusa}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Memory-Constrained Inference and Tiered Offloading.}{2}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Low-Rank Factorization for Large Language Models.}{2}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Dynamic Depth, Early Exit, and Speculative Decoding.}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Problem Definition}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Memory Budget Constraint.}{3}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Joint Objective Function.}{3}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Methodology: WARI-L}{3}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Factorization and Storage Invariant}{3}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The Storage Correctness Invariant.}{3}{section*.6}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces WARI-L Sublayer Adaptive Dispatch}}{4}{algorithm.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{alg:dispatch}{{1}{4}{WARI-L Sublayer Adaptive Dispatch}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Sublayer Tri-State Gate}{4}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Threshold Gate (MVP Policy).}{4}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Oracle Gate (Empirical Upper Bound).}{4}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Session-Adaptive Working-Set Controller}{4}{subsection.4.3}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Session-Adaptive Working-Set Controller}}{5}{algorithm.2}\protected@file@percent }
+\newlabel{alg:controller}{{2}{5}{Session-Adaptive Working-Set Controller}{algorithm.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Theoretical Analysis and Cost Model}{5}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Memory Hierarchy Cost Model.}{5}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experimental Setup}{5}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hardware Configuration.}{5}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mechanism Laboratory Model.}{5}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Baselines.}{5}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Experimental Results}{6}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Experiment 0: Locality and Go/No-Go Decision}{6}{subsection.7.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Experiment 0 spectral decomposition metrics on MiniGPT [\texttt  {exp: results/raw/exp0/}].}}{6}{table.caption.13}\protected@file@percent }
+\newlabel{tab:exp0}{{1}{6}{Experiment 0 spectral decomposition metrics on MiniGPT [\texttt {exp: results/raw/exp0/}]}{table.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Systems performance and memory movement profiling across execution policies.}}{6}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:systems}{{1}{6}{Systems performance and memory movement profiling across execution policies}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Experiment 2: Systems Latency and Cost Model Validation}{6}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Ablation Study}{7}{section.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Comprehensive ablation matrix over seeds 0--4 (mean $\pm $ std) [\texttt  {exp: results/raw/exp3/}].}}{7}{table.caption.15}\protected@file@percent }
+\newlabel{tab:ablation}{{2}{7}{Comprehensive ablation matrix over seeds 0--4 (mean $\pm $ std) [\texttt {exp: results/raw/exp3/}]}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {paragraph}{Key Observations from Ablation Matrix:}{7}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Experiment 4: Parameter Sensitivity Analysis}{7}{subsection.8.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Sensitivity analysis across pin budgets and gate thresholds [\texttt  {exp: results/raw/exp4/}].}}{7}{table.caption.17}\protected@file@percent }
+\newlabel{tab:exp4}{{3}{7}{Sensitivity analysis across pin budgets and gate thresholds [\texttt {exp: results/raw/exp4/}]}{table.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Limitations}{7}{section.9}\protected@file@percent }
+\citation{song2024powerinfer}
+\bibstyle{plain}
+\bibdata{references}
+\bibcite{alizadeh2024llminflash}{1}
+\bibcite{cai2024medusa}{2}
+\bibcite{chen2026ondevice}{3}
+\bibcite{elhoushi2024layerskip}{4}
+\bibcite{kumar2025helios}{5}
+\bibcite{leviathan2023speculative}{6}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Discussion}{8}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{8}{section.11}\protected@file@percent }
+\bibcite{raposo2024mod}{7}
+\bibcite{sheng2023flexgen}{8}
+\bibcite{song2024powerinfer}{9}
+\bibcite{wan2024efficient}{10}
+\bibcite{wang2025svdllm}{11}
+\bibcite{williams2009roofline}{12}
+\bibcite{xie2026flexee}{13}
+\bibcite{xu2024ondevice}{14}
+\bibcite{xue2024powerinfer2}{15}
+\bibcite{yuan2024unveiled}{16}
+\bibcite{yuan2023asvd}{17}
+\bibcite{zhang2025challenging}{18}
+\gdef \@abspage@last{9}

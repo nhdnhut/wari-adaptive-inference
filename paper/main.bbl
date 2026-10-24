@@ -1,0 +1,113 @@
+\begin{thebibliography}{10}
+
+\bibitem{alizadeh2024llminflash}
+Keivan Alizadeh, Iman Mirzadeh, Dmitry Belenko, Karen Khatamifard, Minsik Cho,
+  Carlo C.~Del Mundo, Mohammad Rastegari, and Mehrdad Farajtabar.
+\newblock Llm in a flash: Efficient large language model inference with limited
+  memory.
+\newblock In {\em Annual Meeting of the Association for Computational
+  Linguistics (ACL)}, 2024.
+
+\bibitem{cai2024medusa}
+Zheng Cai et~al.
+\newblock Medusa: Simple llm inference acceleration with multiple decoding
+  heads.
+\newblock {\em arXiv preprint arXiv:2401.10774}, 2024.
+
+\bibitem{chen2026ondevice}
+Meng Chen et~al.
+\newblock A survey on on-device large language models: Systems, architectures,
+  and optimizations.
+\newblock {\em Artificial Intelligence Review}, 2026.
+
+\bibitem{elhoushi2024layerskip}
+Mostafa Elhoushi et~al.
+\newblock Layerskip: Enabling early exit in large language models.
+\newblock In {\em Annual Meeting of the Association for Computational
+  Linguistics (ACL)}, 2024.
+
+\bibitem{kumar2025helios}
+Saurabh Kumar, Sayan Nag, Jason Clemons, Lizy~K. John, and Joydeep Das.
+\newblock Helios: Hardware-efficient low-rank inference offloading subsystem
+  for llms.
+\newblock {\em arXiv preprint arXiv:2504.10724}, 2025.
+
+\bibitem{leviathan2023speculative}
+Yaniv Leviathan, Matan Kalman, and Yossi Matias.
+\newblock Fast inference from transformers via speculative decoding.
+\newblock In {\em International Conference on Machine Learning (ICML)}, 2023.
+
+\bibitem{raposo2024mod}
+David Raposo et~al.
+\newblock Mixture-of-depths: Dynamically allocating compute in
+  transformer-based language models.
+\newblock {\em arXiv preprint arXiv:2404.02258}, 2024.
+
+\bibitem{sheng2023flexgen}
+Ying Sheng, Lianmin Zheng, Binhang Yuan, Ruihang Lai, Ce~Zhang, Guyue Huang,
+  Xingcheng Zhang, Christopher R{\'e}, Ion Stoica, Christopher~De Sa, and Zhao
+  Han.
+\newblock Flexgen: High-throughput generative inference of large language
+  models with a single gpu.
+\newblock In {\em International Conference on Machine Learning (ICML)}, 2023.
+
+\bibitem{song2024powerinfer}
+Yixin Song, Zeyu Mi, Haotong Xie, and Haibo Chen.
+\newblock Powerinfer: Fast large language model serving with a consumer-grade
+  gpu.
+\newblock In {\em ACM Symposium on Operating Systems Principles (SOSP)}, 2024.
+
+\bibitem{wan2024efficient}
+Zhongwei Wan et~al.
+\newblock Efficient large language models: A survey.
+\newblock {\em Transactions on Machine Learning Research (TMLR)}, 2024.
+
+\bibitem{wang2025svdllm}
+Xin Wang, Chen Zheng, Mengzhen Wan, and Zhaoyang Zhang.
+\newblock Svd-llm: Truncation-aware singular value decomposition for large
+  language model compression.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2025.
+
+\bibitem{williams2009roofline}
+Samuel Williams, Andrew Waterman, and David Patterson.
+\newblock Roofline: An insightful visual performance model for multicore
+  architectures.
+\newblock {\em Communications of the ACM}, 52(4):65--76, 2009.
+
+\bibitem{xie2026flexee}
+Haotong Xie, Chen Li, and Yutao Kang.
+\newblock Flexee: Flexible early exit with residual compensation for llm
+  decode.
+\newblock {\em arXiv preprint arXiv:2609.17008}, 2026.
+
+\bibitem{xu2024ondevice}
+Yong Xu et~al.
+\newblock On-device language models: A comprehensive survey.
+\newblock {\em arXiv preprint arXiv:2409.00088}, 2024.
+
+\bibitem{xue2024powerinfer2}
+Zhen Xue et~al.
+\newblock Powerinfer-2: Fast large language model serving on a smartphone.
+\newblock {\em arXiv preprint arXiv:2406.06282}, 2024.
+
+\bibitem{yuan2024unveiled}
+Binhang Yuan et~al.
+\newblock Llm inference unveiled: Survey and taxonomy of practical
+  acceleration.
+\newblock {\em arXiv preprint arXiv:2402.16363}, 2024.
+
+\bibitem{yuan2023asvd}
+Zhihang Yuan, Yuzhang Shang, Yue Song, Qiang Wu, Zhengyang Yan, and Guangyu
+  Sun.
+\newblock Asvd: Activation-aware singular value decomposition for compressing
+  large language models.
+\newblock {\em arXiv preprint arXiv:2312.05821}, 2023.
+
+\bibitem{zhang2025challenging}
+Ce~Zhang and Guyue Huang.
+\newblock Challenging gpu dominance: Commodity cpu acceleration for generative
+  inference.
+\newblock {\em arXiv preprint arXiv:2505.06461}, 2025.
+
+\end{thebibliography}

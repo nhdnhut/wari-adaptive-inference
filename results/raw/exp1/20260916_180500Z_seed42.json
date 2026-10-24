@@ -1,0 +1,25 @@
+{
+  "timestamp": "20260916_180500Z",
+  "experiment": "exp1_quality",
+  "model": "MiniGPT (random-init laboratory)",
+  "disclaimer": "MiniGPT pilot quality = KL and argmax agreement ONLY. Do not cite as LLM scores.",
+  "hardware": {
+    "os": "Windows",
+    "os_release": "11",
+    "architecture": "AMD64",
+    "python_version": "3.14.7",
+    "torch_version": "2.14.0+cpu",
+    "cpu_count_logical": 8,
+    "cpu_count_physical": 4,
+    "total_ram_bytes": 8266485760,
+    "total_ram_gb": 7.7,
+    "num_threads_torch": 4
+  },
+  "seed": 42,
+  "quality": {
+    "kl_divergence": 4.9349,
+    "teacher_argmax_agreement": 0.0352,
+    "wikitext2_ppl": "TBD (Requires 16GB+ host for real LM)",
+    "lambada_acc": "TBD (Requires 16GB+ host for real LM)"
+  }
+}

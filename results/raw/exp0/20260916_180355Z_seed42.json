@@ -1,0 +1,51 @@
+{
+  "timestamp": "20260916_180355Z",
+  "experiment": "exp0_locality",
+  "model": "MiniGPT (random-init laboratory)",
+  "disclaimer": "Mechanism laboratory only. Does not authorize trained LLM novelty claims.",
+  "hardware": {
+    "os": "Windows",
+    "os_release": "11",
+    "architecture": "AMD64",
+    "python_version": "3.14.7",
+    "torch_version": "2.14.0+cpu",
+    "cpu_count_logical": 8,
+    "cpu_count_physical": 4,
+    "total_ram_bytes": 8266485760,
+    "total_ram_gb": 7.7,
+    "num_threads_torch": 4
+  },
+  "seed": 42,
+  "pre_registered_thresholds": {
+    "max_core_byte_ratio": 0.5,
+    "min_session_jaccard": 0.5
+  },
+  "results_by_rank": {
+    "16": {
+      "rank": 16,
+      "mean_relative_frobenius": 0.9038,
+      "core_to_dense_byte_ratio": 0.0952,
+      "kl_divergence": 12.9646,
+      "argmax_agreement": 0.0,
+      "window_jaccard_mean": 1.0
+    },
+    "32": {
+      "rank": 32,
+      "mean_relative_frobenius": 0.8174,
+      "core_to_dense_byte_ratio": 0.1888,
+      "kl_divergence": 12.4829,
+      "argmax_agreement": 0.0,
+      "window_jaccard_mean": 1.0
+    },
+    "64": {
+      "rank": 64,
+      "mean_relative_frobenius": 0.6613,
+      "core_to_dense_byte_ratio": 0.376,
+      "kl_divergence": 10.4658,
+      "argmax_agreement": 0.0078,
+      "window_jaccard_mean": 1.0
+    }
+  },
+  "exp0_go_on_minigpt": false,
+  "note": "rank-16 mean rel-Frobenius \u2248 0.904. Expected for Gaussian random matrices. Real LM evaluation deferred to 16GB+ host."
+}

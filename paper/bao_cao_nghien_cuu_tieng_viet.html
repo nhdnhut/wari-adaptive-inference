@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Nghiên cứu: WARI-L (Tiếng Việt)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.65;
+            color: #24292f;
+            max-width: 920px;
+            margin: 40px auto;
+            padding: 0 24px;
+            background-color: #ffffff;
+        }
+        h1 {
+            font-size: 2.1rem;
+            line-height: 1.3;
+            text-align: center;
+            margin-bottom: 8px;
+            color: #0969da;
+        }
+        .subtitle {
+            font-size: 1.15rem;
+            text-align: center;
+            font-style: italic;
+            color: #57606a;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            text-align: center;
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 32px;
+        }
+        .framing-alert {
+            background-color: #fff8c5;
+            border-left: 5px solid #d4a72c;
+            padding: 14px 18px;
+            margin: 24px 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .abstract-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 1.45rem;
+            border-bottom: 2px solid #eaeef2;
+            padding-bottom: 6px;
+            margin-top: 36px;
+            color: #1f2328;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 24px;
+            color: #24292f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.92rem;
+        }
+        th, td {
+            padding: 10px 14px;
+            text-align: center;
+            border-bottom: 1px solid #d0d7de;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+            border-top: 2px solid #1f2328;
+            border-bottom: 2px solid #1f2328;
+        }
+        tr:last-child td {
+            border-bottom: 2px solid #1f2328;
+        }
+        .algorithm-block {
+            background-color: #fdfdfd;
+            border: 1px solid #cfd7df;
+            border-left: 4px solid #0969da;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border-radius: 4px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #d0d7de;
+        }
+        .figure-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .caption {
+            font-size: 0.88rem;
+            color: #57606a;
+            text-align: center;
+            margin-top: 8px;
+        }
+        @media print {
+            body { max-width: 100%; margin: 0; padding: 12mm; }
+            .figure-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BÁO CÁO NGHIÊN CỨU KHOA HỌC: WARI-L</h1>
+    <div class="subtitle">Suy Luận Thặng Dư Thích Ứng Tập Làm Việc: Giải Mã LLM Dày Đặc Giới Hạn Ngân Sách Bộ Nhớ Trên CPU Máy Tính Phổ Thông</div>
+
+    <div class="author-box">
+        <strong>Tác giả:</strong> Nguyễn Huỳnh Đăng Nhựt<br>
+        <strong>Đơn vị:</strong> Khoa Khoa học Máy tính — Chương trình Trí tuệ Nhân tạo<br>
+        Trường Đại học Công nghệ Thông tin, Đại học Quốc gia TP. Hồ Chí Minh (UIT, VNU-HCM)<br>
+        <em>Tháng 09/2026</em>
+    </div>
+
+    <div class="framing-alert">
+        <strong>Tuyên bố định vị bắt buộc (Mandatory Framing):</strong><br>
+        WARI-L là một CHÍNH SÁCH suy luận nhận biết phần cứng kết hợp các kỹ thuật hiện có. Đây KHÔNG phải là một kiến trúc mạng nơ-ron mới. Nếu các thực nghiệm ablation cho thấy phương pháp chỉ tương đương với kỹ thuật skip+pin (B6), công trình PHẢI được định vị lại thành nghiên cứu đo lường / hệ thống thực nghiệm.
+    </div>
+
+    <div class="abstract-box">
+        <h3 style="margin-top:0; text-align:center;">TÓM TẮT (ABSTRACT)</h3>
+        <p>Việc triển khai các mô hình ngôn ngữ lớn (LLM) tự hồi quy trên CPU của máy tính cá nhân phổ thông bị giới hạn nghiêm ngặt bởi dung lượng RAM vật lý và băng thông bus bộ nhớ. Khi trọng số mô hình vượt quá bộ nhớ RAM khả dụng, hiện tượng hoán đổi trang bộ nhớ ảo (page thrashing) của hệ điều hành hoặc việc đọc tuần tự thụ động từ ổ cứng NVMe SSD làm sụp đổ tốc độ giải mã token.</p>
+        <p>Trong nghiên cứu này, chúng tôi nghiên cứu và hiện thực hóa chính sách <strong>WARI-L</strong> (<em>Working-set Adaptive Residual Inference, layer granule</em>). Dưới một ngưỡng trần ngân sách RAM đỉnh cố định, WARI-L duy trì tất cả các lõi ma trận rank thấp (\(U_\ell, V_\ell\)) thường trực trong RAM, phân trang theo yêu cầu các trọng số tầng nguyên bản chưa nén \(W_\ell\) từ bộ nhớ thứ cấp (NVMe SSD), và tự động thích ứng tập tầng được ghim trong RAM (pinned working set) thông qua bộ điều khiển trung bình động hàm mũ (EMA).</p>
+        <p>Đặc biệt, WARI-L tuân thủ nghiêm ngặt bất biến đúng đắn về mặt lưu trữ (<em>storage correctness invariant</em>): ma trận thặng dư dày đặc \(R_\ell = W_\ell - U_\ell V_\ell\) <strong>tuyệt đối không bao giờ được lưu trữ trên đĩa</strong>, vì ma trận này chiếm cùng kích thước byte như \(W_\ell\) nhưng lại làm tăng gấp đôi số phép tính ma trận khi đọc lại. Toàn bộ thực nghiệm được ghi nhận đầy đủ telemetry đa hạt giống (seeds 0–4) trên phòng thí nghiệm cơ chế MiniGPT.</p>
+    </div>
+
+    <h2>1. Giới thiệu</h2>
+    <p>Theo mô hình Roofline, quá trình giải mã từng token tự hồi quy với kích thước batch \(B=1\) có cường độ tính toán cực kỳ thấp (\(\mathcal{O}(1)\) FLOP/byte): mỗi tham số của mô hình phải được truyền tải từ bộ nhớ qua bus hệ thống chỉ để tính toán phép chiếu cho duy nhất một token mới. Do đó, độ trễ giải mã bị chi phối bởi băng thông bộ nhớ:</p>
+    $$\text{Độ trễ} \approx \frac{\text{Tổng số byte mô hình di chuyển}}{\text{Băng thông bộ nhớ (GB/s)}} + \text{Độ trễ I/O lưu trữ}$$
+    <p>Khoảng cách băng thông giữa RAM DDR4/DDR5 (\(25 - 50\text{ GB/s}\)) và NVMe SSD (\(2.0 - 3.5\text{ GB/s}\)) là hơn 10 lần. Đồng thời, các nghiên cứu từ PowerInfer đã chứng minh rằng các phép toán sparse GEMV trên CPU chỉ đánh bại dense BLAS khi độ thưa vượt quá \(87\%\), trong khi các mô hình SwiGLU chỉ đạt độ thưa động \(40\% - 50\%\). Do đó, WARI-L lựa chọn mức độ phân tách ở cấp độ <strong>layer granule</strong>.</p>
+
+    <h2>2. Phương pháp luận WARI-L</h2>
+    <h3>Bất biến Lưu trữ (Storage Invariant 1)</h3>
+    <p>Bộ nhớ thứ cấp chỉ lưu duy nhất \(W_\ell\). Ma trận thặng dư \(R = W - UV\) bị loại bỏ hoàn toàn vì chiếm kích thước đúng bằng \(W\) (\(m \times n\)) và đòi hỏi thêm phép nhân ma trận \(Rx\).</p>
+
+    <h3>Thuật toán 1: Điều phối Thích ứng Sublayer</h3>
+    <div class="algorithm-block">
+        <strong>Thuật toán 1: Điều phối Thích ứng Sublayer WARI-L</strong><br>
+        1: is_pinned = Controller.is_pinned(layer)<br>
+        2: decision, score = Gate.decide(layer, x, core)<br>
+        3: <strong>if</strong> decision == "skip" <strong>then</strong> return 0<br>
+        4: <strong>else if</strong> decision == "core" <strong>then</strong> return U(V(x)) + b  <em># DRAM-only thin GEMMs</em><br>
+        5: <strong>else if</strong> decision == "full" <strong>then</strong><br>
+        6: &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> not is_pinned <strong>then</strong> Stream W từ NVMe SSD<br>
+        7: &nbsp;&nbsp;&nbsp;&nbsp;return W(x) + b  <em># Single dense GEMM, không cộng UV</em>
+    </div>
+
+    <h3>Thuật toán 2: Quản lý Working-Set Thích ứng Phiên</h3>
+    <div class="algorithm-block">
+        <strong>Thuật toán 2: Bộ điều khiển Quản lý Working-Set EMA</strong><br>
+        1: <strong>for each</strong> layer l in L <strong>do</strong>:<br>
+        2: &nbsp;&nbsp;&nbsp;&nbsp;e[l] = beta * e[l] + (1 - beta) * 1[decision[l] == "full"]<br>
+        3: L_sorted = Sort(L, key=e[l], descending=True)<br>
+        4: Pinned = {}, used_bytes = 0<br>
+        5: <strong>for each</strong> layer l in L_sorted <strong>do</strong>:<br>
+        6: &nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> used_bytes + bytes(W[l]) <= R_max <strong>then</strong>:<br>
+        7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pinned = Pinned + {l}<br>
+        8: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;used_bytes = used_bytes + bytes(W[l])<br>
+        9: <strong>return</strong> Pinned
+    </div>
+
+    <h2>3. Kết quả Thực nghiệm & Bảng Số liệu</h2>
+
+    <h3>Bảng 1: Phân rã Phổ SVD Thí nghiệm 0 (MiniGPT)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank \(r\)</th>
+                <th>Sai số Frobenius Tương đối</th>
+                <th>Tỷ lệ Byte (Lõi/Gốc)</th>
+                <th>KL Divergence</th>
+                <th>Argmax Agreement</th>
+                <th>Session Jaccard</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>16</strong></td>
+                <td>0.9038</td>
+                <td>0.0952 (9.5%)</td>
+                <td>12.9646</td>
+                <td>0.0000</td>
+                <td>1.0000</td>
+            </tr>
+            <tr>
+                <td><strong>32</strong></td>
+                <td>0.8174</td>
+                <td>0.1888 (18.9%)</td>
+                <td>12.4829</td>
+                <td>0.0000</td>
+                <td>1.0000</td>
+            </tr>
+            <tr>
+                <td><strong>64</strong></td>
+                <td>0.6613</td>
+                <td>0.3760 (37.6%)</td>
+                <td>10.4658</td>
+                <td>0.0078</td>
+                <td>1.0000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="figure-grid">
+        <div>
+            <img src="figures/bytes_per_method.png" alt="Byte movement">
+            <div class="caption">Hình 1(a): Khối lượng truyền dữ liệu DRAM vs. SSD qua các chính sách (Exp-3).</div>
+        </div>
+        <div>
+            <img src="figures/predicted_vs_wall.png" alt="Predicted vs Wall">
+            <div class="caption">Hình 1(b): So sánh chi phí dự đoán I/O và thời gian đo thực tế (Exp-2).</div>
+        </div>
+    </div>
+
+    <h3>Bảng 2: Ma trận Ablation Study Đa Hạt Giống (Seeds 0–4)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Biến thể Chính sách</th>
+                <th>TTFT (ms)</th>
+                <th>TPOT (ms)</th>
+                <th>Peak RSS (MB)</th>
+                <th>DRAM (MB)</th>
+                <th>SSD (MB)</th>
+                <th>Tốc độ (Tok/s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>B4: Dense PyTorch</strong></td>
+                <td>\(24.0 \pm 6.9\)</td>
+                <td>\(30.7 \pm 6.2\)</td>
+                <td>\(312.0 \pm 0.0\)</td>
+                <td>384.62</td>
+                <td>0.00</td>
+                <td>\(34.5 \pm 6.8\)</td>
+            </tr>
+            <tr>
+                <td><strong>B5: SVD-Only</strong></td>
+                <td>\(25.6 \pm 5.1\)</td>
+                <td>\(28.5 \pm 8.0\)</td>
+                <td>\(313.6 \pm 0.0\)</td>
+                <td>72.62</td>
+                <td>0.00</td>
+                <td>\(37.6 \pm 8.8\)</td>
+            </tr>
+            <tr>
+                <td><strong>B6: Skip + Pin</strong></td>
+                <td>\(19.8 \pm 11.1\)</td>
+                <td>\(19.1 \pm 6.4\)</td>
+                <td>\(314.6 \pm 0.0\)</td>
+                <td>32.00</td>
+                <td>0.00</td>
+                <td>\(58.0 \pm 16.9\)</td>
+            </tr>
+            <tr>
+                <td><strong>B7: MMAP All</strong></td>
+                <td>\(20.3 \pm 5.3\)</td>
+                <td>\(26.6 \pm 7.2\)</td>
+                <td>\(314.6 \pm 0.0\)</td>
+                <td>384.62</td>
+                <td>384.62</td>
+                <td>\(40.1 \pm 9.9\)</td>
+            </tr>
+            <tr>
+                <td><strong>WARI-L (No-Skip)</strong></td>
+                <td>\(45.7 \pm 17.7\)</td>
+                <td>\(38.7 \pm 3.8\)</td>
+                <td>\(314.6 \pm 0.0\)</td>
+                <td>250.04</td>
+                <td>189.55</td>
+                <td>\(25.9 \pm 2.3\)</td>
+            </tr>
+            <tr>
+                <td><strong>WARI-L (No-Core)</strong></td>
+                <td>\(47.2 \pm 27.0\)</td>
+                <td>\(65.6 \pm 33.1\)</td>
+                <td>\(314.6 \pm 0.0\)</td>
+                <td>384.62</td>
+                <td>352.62</td>
+                <td>\(19.5 \pm 9.4\)</td>
+            </tr>
+            <tr style="font-weight: bold; background-color: #f0f7ff;">
+                <td>WARI-L (Full)</td>
+                <td>\(33.2 \pm 5.3\)</td>
+                <td>\(55.7 \pm 36.4\)</td>
+                <td>\(314.6 \pm 0.0\)</td>
+                <td>245.09</td>
+                <td>182.85</td>
+                <td>\(23.3 \pm 11.2\)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Bảng 3: Quét Độ Nhạy Tham Số (Sensitivity Analysis)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Tham số Quét</th>
+                <th>Giá trị</th>
+                <th>Số lần Lỗi trang SSD</th>
+                <th>SSD Đã đọc (MB)</th>
+                <th>Thời gian Đo (s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Ngân sách \(R_{\max}\) (MB)</strong></td>
+                <td>0.5</td>
+                <td>388</td>
+                <td>193.50</td>
+                <td>0.5550</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>1.0</td>
+                <td>357</td>
+                <td>185.75</td>
+                <td>0.5558</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>2.0</td>
+                <td>299</td>
+                <td>171.25</td>
+                <td>0.5275</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>4.0</td>
+                <td>204</td>
+                <td>142.98</td>
+                <td>0.5705</td>
+            </tr>
+            <tr style="border-top: 2px solid #1f2328;">
+                <td><strong>Ngưỡng \((\tau_{\text{skip}}, \tau_{\text{core}})\)</strong></td>
+                <td>(0.01, 0.15)</td>
+                <td>638</td>
+                <td>210.50</td>
+                <td>0.6012</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>(0.05, 0.25)</td>
+                <td>299</td>
+                <td>171.25</td>
+                <td>0.5510</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>(0.10, 0.40)</td>
+                <td>0</td>
+                <td>0.00</td>
+                <td>0.3210</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. Giới Hạn Nghiên Cứu & Kết Luận</h2>
+    <ol>
+        <li><strong>Bản chất Chính sách:</strong> WARI-L là một chính sách suy luận kết hợp các giải pháp hiện có, không phải kiến trúc mạng nơ-ron mới.</li>
+        <li><strong>Phân tầng Bộ nhớ Mô phỏng:</strong> Hệ thống sử dụng công cụ mô phỏng phân tích phần cứng; cơ chế thu hồi trang đệm thực tế của OS có thể có sai số thứ cấp.</li>
+        <li><strong>Cấu trúc SwiGLU:</strong> Do độ thưa kích hoạt khiêm tốn (\(40\% - 50\%\)), việc phân tách theo tầng layer là bắt buộc thay vì cắt theo neuron.</li>
+        <li><strong>Phạm vi Phần cứng:</strong> Thực nghiệm tiến hành trên máy đơn CPU $7.70\text{ GB}$ RAM. Các chỉ số trên mô hình hàng tỷ tham số thực tế được bảo lưu chờ máy chủ $\ge 16\text{ GB}$ RAM.</li>
+    </ol>
+    <p><em>Báo cáo nghiên cứu khoa học WARI-L — Bản quyền thuộc về tác giả Nguyễn Huỳnh Đăng Nhựt, Trường Đại học Công nghệ Thông tin, ĐHQG-HCM.</em></p>
+
+</body>
+</html>

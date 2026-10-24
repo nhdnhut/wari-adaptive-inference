@@ -1,0 +1,109 @@
+{
+  "timestamp": "20260916_181007Z",
+  "experiment": "exp4_sensitivity",
+  "model": "MiniGPT (random-init laboratory)",
+  "disclaimer": "MiniGPT sensitivity pilot. Parameter sweeps for rank, budget, and thresholds.",
+  "hardware": {
+    "os": "Windows",
+    "os_release": "11",
+    "architecture": "AMD64",
+    "python_version": "3.14.7",
+    "torch_version": "2.14.0+cpu",
+    "cpu_count_logical": 8,
+    "cpu_count_physical": 4,
+    "total_ram_bytes": 8266485760,
+    "total_ram_gb": 7.7,
+    "num_threads_torch": 4
+  },
+  "seed": 42,
+  "sensitivity": {
+    "rank": {
+      "16": {
+        "rank": 16,
+        "mean_frob": 0.9038,
+        "wall_time_sec": 0.6142,
+        "dram_mb": 45.58,
+        "ssd_mb": 5.27,
+        "ssd_misses": 6
+      },
+      "32": {
+        "rank": 32,
+        "mean_frob": 0.8174,
+        "wall_time_sec": 0.551,
+        "dram_mb": 235.19,
+        "ssd_mb": 171.25,
+        "ssd_misses": 299
+      },
+      "64": {
+        "rank": 64,
+        "mean_frob": 0.6613,
+        "wall_time_sec": 0.5851,
+        "dram_mb": 296.62,
+        "ssd_mb": 224.5,
+        "ssd_misses": 512
+      }
+    },
+    "budget_mb": {
+      "0.5": {
+        "budget_mb": 0.5,
+        "pinned_bytes": 524288,
+        "ssd_misses": 388,
+        "ssd_mb": 193.5,
+        "wall_time_sec": 0.555
+      },
+      "1.0": {
+        "budget_mb": 1.0,
+        "pinned_bytes": 1048576,
+        "ssd_misses": 357,
+        "ssd_mb": 185.75,
+        "wall_time_sec": 0.5558
+      },
+      "2.0": {
+        "budget_mb": 2.0,
+        "pinned_bytes": 2097152,
+        "ssd_misses": 299,
+        "ssd_mb": 171.25,
+        "wall_time_sec": 0.5275
+      },
+      "4.0": {
+        "budget_mb": 4.0,
+        "pinned_bytes": 3936256,
+        "ssd_misses": 204,
+        "ssd_mb": 142.98,
+        "wall_time_sec": 0.5705
+      }
+    },
+    "tau": {
+      "0.01_0.15": {
+        "tau_skip": 0.01,
+        "tau_core": 0.15,
+        "gate_histogram": {
+          "skip": 0,
+          "core": 2,
+          "full": 766
+        },
+        "ssd_misses": 638
+      },
+      "0.05_0.25": {
+        "tau_skip": 0.05,
+        "tau_core": 0.25,
+        "gate_histogram": {
+          "skip": 0,
+          "core": 349,
+          "full": 419
+        },
+        "ssd_misses": 299
+      },
+      "0.1_0.4": {
+        "tau_skip": 0.1,
+        "tau_core": 0.4,
+        "gate_histogram": {
+          "skip": 0,
+          "core": 768,
+          "full": 0
+        },
+        "ssd_misses": 0
+      }
+    }
+  }
+}

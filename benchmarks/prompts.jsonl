@@ -1,0 +1,8 @@
+{"id": "p001", "prompt": "In the beginning, computer systems were constrained by memory rather than compute.", "domain": "systems"}
+{"id": "p002", "prompt": "The primary bottleneck in modern large language model decoding on commodity hardware is memory bandwidth.", "domain": "ai_hardware"}
+{"id": "p003", "prompt": "Singular value decomposition provides an optimal low-rank matrix approximation under the Frobenius norm.", "domain": "linear_algebra"}
+{"id": "p004", "prompt": "When paging model weights from secondary storage, NVMe read latency and sequential bandwidth determine throughput.", "domain": "storage"}
+{"id": "p005", "prompt": "Adaptive layer skipping allows models to dynamically allocate compute based on token complexity.", "domain": "efficiency"}
+{"id": "p006", "prompt": "A working set policy tracks temporal locality of references across autoregressive decoding steps.", "domain": "operating_systems"}
+{"id": "p007", "prompt": "Residual connections in transformer architectures facilitate gradient flow during training.", "domain": "deep_learning"}
+{"id": "p008", "prompt": "Evaluating language models on commodity CPUs requires balancing quality against latency and peak memory footprint.", "domain": "benchmarking"}
